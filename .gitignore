@@ -1,0 +1,16 @@
+# Игнорируем скомпилированные бинарники (исполняемые файлы)
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+__debug_bin
+
+# Игнорируем файлы с секретами (если они у тебя так называются)
+.env
+secret.json
+Tool Configuration.md
+
+# НО НЕ ИГНОРИРУЕМ go mod sum mod
+
+# Tools Configuration.md 
