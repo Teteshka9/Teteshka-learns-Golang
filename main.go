@@ -2,66 +2,130 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
+	"test-vscode-go/functions"
 )
 
 func main() {
 
-s1 := []int{3, 4, 6}
-s2 := s1
+	// s1 := []int{3, 4, 6}
+	// s2 := s1
 
+	var number int
+	var text string
+	fmt.Println(number)
+	fmt.Println(text)
 
-var number int 
-var text string 
-fmt.Println(number)
-fmt.Println(text)
+	score := 0
 
-score := 0
+	for i := 0; i < 12; i++ {
+		score++
 
-for i := 0; i < 12; i++ {
-	score++
+		switch {
+		case score > 10:
+			fmt.Println("Good boy")
+		case score <= 10:
+			fmt.Println("Score is not enough")
+		default:
+			fmt.Println("Play better")
+		}
+	}
 
+	players := []string{"Vika", "Alex", "Robot", "Max"}
 
-switch {
-case score > 10: 
-	fmt.Println("Good boy")
-case score <= 10:
-	fmt.Println("Score is not enough")
-default:
-	fmt.Println("Play better")
+	for i, name := range players {
+		fmt.Printf("Player #%d: -> %s ", i+1, name)
+
+		switch name {
+		case "Vika":
+			fmt.Println("Master of the Game")
+		case "Robot":
+			fmt.Println("Just a Bot")
+		default:
+			fmt.Println("Simple player")
+
+		}
+	}
+
+	// fmt.Println(equal(s1, s2))
+	weekday := "ааа"
+
+	switch weekday {
+	case "Friday":
+		fmt.Println("Today is not a Monday")
+	case "Monday":
+		fmt.Println("Today is Monday")
+	default:
+		fmt.Println("not a weekday")
+	}
+	fmt.Println("Hello World")
+	fmt.Println("Generated random", rand.Intn(10))
+
+	if rand.Intn(4) == 1 {
+		fmt.Println("I generated random number")
+	} else {
+		fmt.Println("I did not hit 1")
+	}
+
+	result := aboba(0, 10, 0)
+	fmt.Println(result)
+
+	switch {
+	case result < 10:
+		fmt.Println("result is smaller than 10")
+	case result > 10:
+		fmt.Println("Result is bigger than 10")
+	default:
+		fmt.Println("I dont know")
+	}
+
+	squaredNum := functions.Squre(2)
+	fmt.Println(squaredNum)
+
+	s := 5
+	t := "ahahhaa"
+
+	fmt.Println(ahaha(s, t))
+	fmt.Println(s)
+	fmt.Println(t)
 }
-}
 
-players := []string{"Vika", "Alex", "Robot", "Max"}
-
-for i, name := range players{
-	fmt.Printf("Player #%d: -> %s ", i+1, name)
-
-	switch name {
-	case "Vika":
-		fmt.Println("Master of the Game")	
-	case "Robot":
-		fmt.Println("Just a Bot")
-	default: 
-		fmt.Println("Simple player")
-
-}
-fmt.Println(equal(s1, s2))
-}
-}
 func equal(a, b []int) bool {
 	if len(a) != len(b) {
 
 		return false
-	} 
+	}
 
 	for i := range a {
 
 		if a[i] != b[i] {
 
-			return false 
-		} 
+			return false
+		}
 	}
 
 	return true
 }
 
+func SayHelloWorld() string {
+	return "My greeting function"
+}
+
+func hello() {}
+
+func aboba(a, b, c int) int {
+	return a + b + c
+}
+
+func ahaha(s int, t string) (int, string) {
+	s = 100
+	t = "bbbb"
+
+	return s, t
+}
+func qyqyqyq(s *int, t *string) (int, string) {
+	*s = 100
+	*t = "bbbb"
+
+	return *s, *t
+}
