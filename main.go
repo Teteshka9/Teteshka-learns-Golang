@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"strconv"
 	"test-vscode-go/functions"
+
 )
 
 func main() {
@@ -17,6 +19,11 @@ func main() {
 	fmt.Println(text)
 
 	score := 0
+
+	pointer := &score
+
+	fmt.Println("THIS IS A POINTER ADDRESS: ", pointer)
+	fmt.Println("THIS IS POINTER VALUE: ", *pointer)
 
 	for i := 0; i < 12; i++ {
 		score++
@@ -128,4 +135,16 @@ func qyqyqyq(s *int, t *string) (int, string) {
 	*t = "bbbb"
 
 	return *s, *t
+}
+
+func integetToString1(a, b int) string {
+	return strconv.Itoa(a + b)
+}
+
+func integetToString2(a, b int) string {
+	return fmt.Sprint(a+b)
+}
+
+func database(){
+	defer func(){}()
 }
