@@ -5,18 +5,22 @@ import (
 	"math/rand"
 	"strconv"
 	"test-vscode-go/functions"
-
+	"test-vscode-go/greeting"
 )
 
 func main() {
 
 	// s1 := []int{3, 4, 6}
 	// s2 := s1
+		greeting.SayHelloToWorld()
 
-	var number int
-	var text string
-	fmt.Println(number)
-	fmt.Println(text)
+
+		myNums := []int{2, 7, 9, 15}
+
+	myResult := TwoSum(myNums, 9)
+	fmt.Println(myResult)
+
+	
 
 	score := 0
 
@@ -95,6 +99,36 @@ func main() {
 	fmt.Println(ahaha(s, t))
 	fmt.Println(s)
 	fmt.Println(t)
+
+
+	userBob := User {
+		Name: "Bob",
+		Age: 40,
+		PhoneNumber: "88888888",
+		Address: Address{
+			City: "London",
+			Street: "Shier",
+		},
+	}
+
+	fmt.Println("Created new user: ->", userBob)
+	fmt.Printf("%+v\n", userBob)
+
+
+	userBob.changeName("Sara")
+
+	fmt.Println(userBob)
+
+	err := userBob.changeNameWithError("")
+	
+	if err != nil {
+		fmt.Println(err)
+		return 
+	}
+
+	fmt.Println("")
+
+
 }
 
 func equal(a, b []int) bool {
