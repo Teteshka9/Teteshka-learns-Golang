@@ -20,6 +20,8 @@ func main() {
 	myResult := TwoSum(myNums, 9)
 	fmt.Println(myResult)
 
+	newResult := greeting.FindMin(myNums)
+	fmt.Println("Min digit is:", newResult)
 	
 
 	score := 0
@@ -182,3 +184,4 @@ func integetToString2(a, b int) string {
 func database(){
 	defer func(){}()
 }
+
