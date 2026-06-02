@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"strconv"
 	"test-vscode-go/functions"
 	"test-vscode-go/greeting"
 )
@@ -12,17 +11,15 @@ func main() {
 
 	// s1 := []int{3, 4, 6}
 	// s2 := s1
-		greeting.SayHelloToWorld()
+	greeting.SayHelloToWorld()
 
-
-		myNums := []int{2, 7, 9, 15}
+	myNums := []int{2, 7, 9, 15}
 
 	myResult := TwoSum(myNums, 9)
 	fmt.Println(myResult)
 
 	newResult := greeting.FindMin(myNums)
 	fmt.Println("Min digit is:", newResult)
-	
 
 	score := 0
 
@@ -80,7 +77,7 @@ func main() {
 		fmt.Println("I did not hit 1")
 	}
 
-	result := aboba(0, 10, 0)
+	result := functions.Aboba(0, 10, 0)
 	fmt.Println(result)
 
 	switch {
@@ -98,17 +95,16 @@ func main() {
 	s := 5
 	t := "ahahhaa"
 
-	fmt.Println(ahaha(s, t))
+	fmt.Println(functions.Ahaha(s, t))
 	fmt.Println(s)
 	fmt.Println(t)
 
-
-	userBob := User {
-		Name: "Bob",
-		Age: 40,
+	userBob := User{
+		Name:        "Bob",
+		Age:         40,
 		PhoneNumber: "88888888",
 		Address: Address{
-			City: "London",
+			City:   "London",
 			Street: "Shier",
 		},
 	}
@@ -116,72 +112,80 @@ func main() {
 	fmt.Println("Created new user: ->", userBob)
 	fmt.Printf("%+v\n", userBob)
 
-
 	userBob.changeName("Sara")
 
 	fmt.Println(userBob)
 
-	err := userBob.changeNameWithError("")
+	fmt.Println("_-----------------")
+
+	arr := [5]int{5, 66, 77, 88, 33}
+	fmt.Println(arr)
+
+	for _, num := range arr {
+		num *= 2
+	}
+
+	fmt.Println(arr)
+
+	for i := range arr {
+		arr[i] *= 2
+	}
+
+	fmt.Println(arr)
+
+	// ПОТОМУ ЧТО ЧТО ЧЕРЕЗ RANGE ПОПАДАЕМ КОПИЯ, ПОЭТОМУ НАДО РАБОТАТЬ ЧЕРЕЗ ИНДЕКС ЭЛЕМЕНТОВ
+
 	
-	if err != nil {
-		fmt.Println(err)
-		return 
-	}
-
-	fmt.Println("")
-
-
 }
 
-func equal(a, b []int) bool {
-	if len(a) != len(b) {
+// func equal(a, b []int) bool {
+// 	if len(a) != len(b) {
 
-		return false
-	}
+// 		return false
+// 	}
 
-	for i := range a {
+// 	for i := range a {
 
-		if a[i] != b[i] {
+// 		if a[i] != b[i] {
 
-			return false
-		}
-	}
+// 			return false
+// 		}
+// 	}
 
-	return true
-}
+// 	return true
+// }
 
-func SayHelloWorld() string {
-	return "My greeting function"
-}
+// func SayHelloWorld() string {
+// 	return "My greeting function"
+// }
 
-func hello() {}
+// func hello() {}
 
-func aboba(a, b, c int) int {
-	return a + b + c
-}
+// func aboba(a, b, c int) int {
+// 	return a + b + c
+// }
 
-func ahaha(s int, t string) (int, string) {
-	s = 100
-	t = "bbbb"
+// func ahaha(s int, t string) (int, string) {
+// 	s = 100
+// 	t = "bbbb"
 
-	return s, t
-}
-func qyqyqyq(s *int, t *string) (int, string) {
-	*s = 100
-	*t = "bbbb"
+// 	return s, t
+// }
+// func qyqyqyq(s *int, t *string) (int, string) {
+// 	*s = 100
+// 	*t = "bbbb"
 
-	return *s, *t
-}
+// 	return *s, *t
+// }
 
-func integetToString1(a, b int) string {
-	return strconv.Itoa(a + b)
-}
+// func integetToString1(a, b int) string {
+// 	return strconv.Itoa(a + b)
+// }
 
-func integetToString2(a, b int) string {
-	return fmt.Sprint(a+b)
-}
+// func integetToString2(a, b int) string {
+// 	return fmt.Sprint(a + b)
+// }
 
-func database(){
-	defer func(){}()
-}
-
+// func database() {
+// 	defer func() {}()
+// }
