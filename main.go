@@ -5,6 +5,8 @@ import (
 	"math/rand"
 	"test-vscode-go/functions"
 	"test-vscode-go/greeting"
+
+	"github.com/k0kubun/pp"
 )
 
 func main() {
@@ -121,21 +123,55 @@ func main() {
 	arr := [5]int{5, 66, 77, 88, 33}
 	fmt.Println(arr)
 
-	for _, num := range arr {
-		num *= 2
+	// for _, num := range arr {
+	// 	num *= 2
+	// }
+
+	// fmt.Println(arr)
+
+	// for i := range arr {
+	// 	arr[i] *= 2
+	// }
+
+	// fmt.Println(arr)
+
+	for i:= 0; i < 5; i++{
+		if arr[i] %2 == 0 {
+			arr[i] *=2
+		}
 	}
-
-	fmt.Println(arr)
-
-	for i := range arr {
-		arr[i] *= 2
-	}
-
 	fmt.Println(arr)
 
 	// ПОТОМУ ЧТО ЧТО ЧЕРЕЗ RANGE ПОПАДАЕМ КОПИЯ, ПОЭТОМУ НАДО РАБОТАТЬ ЧЕРЕЗ ИНДЕКС ЭЛЕМЕНТОВ
 
+	persons := []Person{
+		{Name: "Alisa", Rating: 4.5, Premium: true}, 
+		{Name: "Sara", Rating: 5.5, Premium: false},
+		{Name: "Jess", Rating: 3.5, Premium: true},
+		{Name: "Dilan", Rating: 2.5, Premium: true},
+	}
+
+	pp.Println("users before upRating", persons)
 	
+
+	pp.Println(persons)
+	
+
+	pp.Println("users before upRating", persons)
+
+
+	for i:=0; i < len(persons); i++{
+		if persons[i].Premium {
+			persons[i].Rating += 5
+			if persons[i].Rating > 7 {
+				persons[i].Rating = 7
+			}
+			fmt.Println(persons[i].Name)
+		}
+	}
+	
+
+	pp.Println(persons)
 }
 
 // func equal(a, b []int) bool {

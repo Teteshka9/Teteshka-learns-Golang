@@ -11,8 +11,14 @@ type User struct {
 	isClose bool
 }
 
+type Person struct {
+	Name string 
+	Rating float64
+	Premium bool
+}
+
 type Address struct {
-	City string 
+	City string  
 	Street string
 }
 

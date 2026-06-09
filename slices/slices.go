@@ -1,6 +1,3 @@
 package slices
 
-import (
-	"fmt"
-)
 
