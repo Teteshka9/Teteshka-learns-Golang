@@ -5,8 +5,7 @@ import (
 	"math/rand"
 	"test-vscode-go/functions"
 	"test-vscode-go/greeting"
-
-	"github.com/k0kubun/pp"
+	//"github.com/k0kubun/pp"
 )
 
 func main() {
@@ -135,9 +134,9 @@ func main() {
 
 	// fmt.Println(arr)
 
-	for i:= 0; i < 5; i++{
-		if arr[i] %2 == 0 {
-			arr[i] *=2
+	for i := 0; i < 5; i++ {
+		if arr[i]%2 == 0 {
+			arr[i] *= 2
 		}
 	}
 	fmt.Println(arr)
@@ -145,33 +144,62 @@ func main() {
 	// ПОТОМУ ЧТО ЧТО ЧЕРЕЗ RANGE ПОПАДАЕМ КОПИЯ, ПОЭТОМУ НАДО РАБОТАТЬ ЧЕРЕЗ ИНДЕКС ЭЛЕМЕНТОВ
 
 	persons := []Person{
-		{Name: "Alisa", Rating: 4.5, Premium: true}, 
-		{Name: "Sara", Rating: 5.5, Premium: false},
+		{Name: "Alisa", Rating: 4.5, Premium: true},
+		// {Name: "Sara", Rating: 5.5, Premium: false},
 		{Name: "Jess", Rating: 3.5, Premium: true},
 		{Name: "Dilan", Rating: 2.5, Premium: true},
 	}
 
-	pp.Println("users before upRating", persons)
-	
+	persons = append(persons, Person{Name: "Vika", Rating: 6.3, Premium: true})
 
-	pp.Println(persons)
-	
-
-	pp.Println("users before upRating", persons)
-
-
-	for i:=0; i < len(persons); i++{
-		if persons[i].Premium {
-			persons[i].Rating += 5
-			if persons[i].Rating > 7 {
-				persons[i].Rating = 7
-			}
-			fmt.Println(persons[i].Name)
-		}
+	weather := map[int]int{
+		11: +3,
+		12: +6,
+		13: +9,
+		14: -4,
+		15: +1,
 	}
-	
 
-	pp.Println(persons)
+	fmt.Println(weather[12])
+
+	for k := range weather {
+		weather[k] += 1
+	}
+	fmt.Println(weather)
+
+	criminals := map[string]bool{
+		"Vasya": true,
+		"Petya": false,
+		"Sasha": false,
+		"Maxim": true,
+		"Misha": true,
+	}
+
+	c, ok := criminals["Vasya"]
+	if !ok {
+		fmt.Println("No such person in database")
+		return
+	}
+	fmt.Println("Person is found")
+	if c {
+		fmt.Println("guilty")
+	} else {
+		fmt.Println("not guilty")
+	}
+
+	// pp.Println("users BEFORE upRating", persons)
+
+	// for i:=0; i < len(persons); i++{
+	// 	if persons[i].Premium {
+	// 		persons[i].Rating += 5
+	// 		if persons[i].Rating > 7 {
+	// 			persons[i].Rating = 7
+	// 		}
+	// 		fmt.Println(persons[i].Name)
+	// 	}
+	// }
+
+	// pp.Println("users AFTER upRating", persons)
 }
 
 // func equal(a, b []int) bool {
